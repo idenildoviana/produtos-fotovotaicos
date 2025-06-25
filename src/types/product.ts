@@ -1,5 +1,5 @@
 export interface Product {
-  id: string; // Para facilitar a remoção
+  id: string;
   name: string;
   category: string;
   manufacturer: string;
