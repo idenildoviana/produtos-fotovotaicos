@@ -1,15 +1,9 @@
-// src/components/products/ProductForm.tsx
-
 "use client";
 
 import { useState } from 'react';
-
-// Importe os novos componentes de formulário
 import InputField from '@/components/common/InputField';
-// import SelectField from '@/components/common/SelectField';
 import SelectField from './common/SelectField';
 
-// Definir uma interface para o estado de erros
 interface FormErrors {
   productName?: string;
   category?: string;
@@ -17,7 +11,6 @@ interface FormErrors {
   powerCapacity?: string;
 }
 
-// Definir a interface para as props do componente ProductForm
 interface FormProdutoProps {
   onAddProduct: (product: {
     name: string;
@@ -57,7 +50,6 @@ export default function FormProduto({ onAddProduct, categories }: FormProdutoPro
       };
       onAddProduct(newProduct);
 
-      // Limpa o formulário após o cadastro
       setProductName('');
       setCategory(categories[0] || '');
       setManufacturer('');
@@ -67,10 +59,9 @@ export default function FormProduto({ onAddProduct, categories }: FormProdutoPro
   };
 
   return (
-    <div className="bg-white p-6 rounded-lg shadow-md mb-8">
-      <h2 className="text-2xl font-bold mb-4">Cadastrar Novo Produto</h2>
+    <div className="bg-white text-[#0F3B5F] p-6 mr-10 rounded-lg shadow-md mb-8">
+      <h2 className="text-2xl text-[#0F3B5F] font-bold mb-4">Cadastrar Novo Produto</h2>
       <form onSubmit={handleSubmit}>
-        {/* Usando o InputField reutilizável */}
         <InputField
           label="Nome do Produto"
           id="productName"
@@ -89,30 +80,28 @@ export default function FormProduto({ onAddProduct, categories }: FormProdutoPro
           error={errors.category}
         />
 
-        {/* Usando o InputField reutilizável */}
         <InputField
-          label="Fabricante"
+          label="Distribuidor"
           id="manufacturer"
           value={manufacturer}
           onChange={(e: React.ChangeEvent<HTMLInputElement>) => setManufacturer(e.target.value)}
-          placeholder="Ex: Canadian Solar"
+          placeholder="Ex: JNG/ADIAS"
           error={errors.manufacturer}
         />
 
-        {/* Usando o InputField reutilizável */}
         <InputField
           label="Potência/Capacidade"
           id="powerCapacity"
           value={powerCapacity}
           onChange={(e: React.ChangeEvent<HTMLInputElement>) => setPowerCapacity(e.target.value)}
-          placeholder="Ex: 550W, 5kW"
+          placeholder="Ex: 550W, 5KWp"
           error={errors.powerCapacity}
         />
 
-        <div className="flex items-center justify-between mt-6"> {/* Ajuste de margem top */}
+        <div className=" items-center justify-center text-center mt-6"> 
           <button
             type="submit"
-            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+            className="  bg-blue-500 cursor-pointer hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
           >
             Cadastrar Produto
           </button>

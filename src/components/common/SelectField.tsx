@@ -1,17 +1,14 @@
-// src/components/common/SelectField.tsx
-
 "use client";
 
 import React from 'react';
 
-// Definir a interface para as props do SelectField
 interface SelectFieldProps {
-  label: string; // O texto do rótulo
-  id: string; // O ID para o select e htmlFor da label
-  value: string; // O valor selecionado atual
-  onChange: (e: React.ChangeEvent<HTMLSelectElement>) => void; // Função de callback para a mudança de valor
-  options: string[]; // Array de strings com as opções do dropdown
-  error?: string; // Mensagem de erro a ser exibida (opcional)
+  label: string; 
+  id: string; 
+  value: string; 
+  onChange: (e: React.ChangeEvent<HTMLSelectElement>) => void; 
+  options: string[]; 
+  error?: string; 
 }
 
 export default function SelectField({
@@ -30,7 +27,7 @@ export default function SelectField({
       <div className="relative">
         <select
           id={id}
-          className={`block appearance-none w-full bg-white border px-3 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline ${
+          className={`block appearance-none  cursor-pointer w-full bg-white border-2 border-blue-300 px-3 py-2 pr-8 rounded-lg shadow leading-tight focus:outline-none focus:shadow-outline ${
             error ? 'border-red-500' : ''
           }`}
           value={value}
@@ -41,9 +38,8 @@ export default function SelectField({
               {option}
             </option>
           ))}
-        </select>
-        {/* Ícone da seta do dropdown (Tailwind CSS) */}
-        <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+        </select> 
+        <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-900">
           <svg
             className="fill-current h-4 w-4"
             xmlns="http://www.w3.org/2000/svg"

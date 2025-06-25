@@ -5,9 +5,9 @@
 import React from 'react';
 
 interface TabsCategoriaProps {
-  categories: string[]; // Lista de todas as categorias disponíveis
-  activeCategory: string; // A categoria atualmente selecionada
-  onSelectCategory: (category: string) => void; // Função para mudar a categoria ativa
+  categories: string[]; 
+  activeCategory: string;
+  onSelectCategory: (category: string) => void; 
 }
 
 export default function TabsCategoria({ categories, activeCategory, onSelectCategory }: TabsCategoriaProps) {
@@ -16,7 +16,7 @@ export default function TabsCategoria({ categories, activeCategory, onSelectCate
       {categories.map((cat) => (
         <button
           key={cat}
-          onClick={() => onSelectCategory(cat)} // Chama a função do pai para mudar a categoria
+          onClick={() => onSelectCategory(cat)} 
           className={`py-2 px-4 text-sm font-medium focus:outline-none transition-colors duration-200
             ${activeCategory === cat
               ? 'border-b-2 border-blue-500 text-blue-600'

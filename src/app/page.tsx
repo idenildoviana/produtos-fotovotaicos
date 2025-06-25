@@ -1,15 +1,12 @@
-// src/app/page.tsx
-
 "use client";
 
 import useLocalStorage from '@/hooks/useLocalStorage';
 import { PRODUCT_CATEGORIES } from '@/utils/constants';
 import { Product } from '@/types/product';
-
-// Importe os novos componentes
-import Header from '@/components/Header'; // Você precisará criar este (próximo passo ou simples h1)
-import ProductForm from '@/components/FormProduto';
-import ProductList from '@/components/ListaProdutos';
+import Header from '@/components/Header'; 
+import FormProduto from '@/components/FormProduto';
+import ListaProdutos from '@/components/ListaProdutos';
+import Footer from '@/components/footer';
 
 export default function Home() {
   const [products, setProducts] = useLocalStorage<Product[]>('photovoltaic_products', []);
@@ -27,25 +24,20 @@ export default function Home() {
   };
 
   return (
-    <div className="container mx-auto p-4 max-w-5xl"> {/* Ajustado max-w para melhor centralização */}
-      {/* Componente Header */}
-      <Header />
+    <div> 
+      <div>
+        <Header />
+        </div>
 
-      {/* Formulário de Cadastro de Produto */}
-      <ProductForm onAddProduct={handleAddProduct} categories={PRODUCT_CATEGORIES} />
-
-      <h2 className="text-2xl font-bold mb-4 text-gray-800">Produtos Cadastrados</h2>
-
-      {/* Lista de Produtos */}
-      <ProductList
+      <div className='container mx-auto flex justify-center  p-10'  >
+      <FormProduto onAddProduct={handleAddProduct} categories={PRODUCT_CATEGORIES} />       
+        <ListaProdutos
         products={products}
         onRemoveProduct={handleRemoveProduct}
         categories={PRODUCT_CATEGORIES}
       />
-
-      <p className="mt-8 text-center text-gray-500">
-        Desenvolvido para Teste Técnico - Desenvolvedor Frontend Júnior
-      </p>
+      </div>
+<Footer/>
     </div>
   );
 }

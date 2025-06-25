@@ -1,19 +1,17 @@
-// src/components/ProductCard.tsx
 
 "use client";
 
 import { Product } from '@/types/product';
 
-// Definir a interface para as props do ProductCard
 interface FormCadastroProps {
-  product: Product; // Recebe um objeto Product completo
-  onRemoveProduct: (id: string) => void; // Função para remover o produto, recebe o ID
+  product: Product; 
+  onRemoveProduct: (id: string) => void;
 }
 
 export default function FormCadastro({ product, onRemoveProduct }: FormCadastroProps) {
   return (
-    <div className="bg-gray-50 p-4 rounded-lg shadow-sm mb-4 border border-gray-200">
-      <div className="flex justify-between items-start">
+    <div className="bg-gray-50 p-4 rounded-lg shadow-sm mb-2 border border-blue-300">
+      <div className="flex justify-between p-4 items-center">
         <div>
           <h3 className="text-lg font-semibold text-gray-800">{product.name}</h3>
           <p className="text-sm text-gray-600">
@@ -28,7 +26,7 @@ export default function FormCadastro({ product, onRemoveProduct }: FormCadastroP
         </div>
         <button
           onClick={() => onRemoveProduct(product.id)}
-          className="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-3 rounded text-sm transition-colors duration-200"
+          className="bg-red-500 ml-5 -mr-4 hover:bg-red-700 text-white font-bold py-1 px-2 rounded text-sm transition-colors duration-200 " 
         >
           Remover
         </button>
