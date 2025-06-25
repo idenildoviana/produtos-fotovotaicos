@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Produtos Fotovotaicos - SolarApp",
+  title: "Produtos Fotovotaicos | SolarApp",
   description: "Cadastrar e listrar produtos fotovotaicos",
 };
 
