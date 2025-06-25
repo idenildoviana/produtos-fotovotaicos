@@ -29,7 +29,7 @@ export default function Home() {
         <Header />
         </div>
 
-      <div className='container mx-auto flex justify-center  p-10'  >
+      <div className='container mx-auto md:flex justify-center  p-8 md:p-10'  >
       <FormProduto onAddProduct={handleAddProduct} categories={PRODUCT_CATEGORIES} />       
         <ListaProdutos
         products={products}

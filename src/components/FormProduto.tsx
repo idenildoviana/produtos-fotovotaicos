@@ -59,7 +59,7 @@ export default function FormProduto({ onAddProduct, categories }: FormProdutoPro
   };
 
   return (
-    <div className="bg-white text-[#0F3B5F] p-6 mr-10 rounded-lg shadow-md mb-8">
+    <div className="bg-white text-[#0F3B5F] p-6 md:mr-10 rounded-lg shadow-md mb-8">
       <h2 className="text-2xl text-[#0F3B5F] font-bold mb-4">Cadastrar Novo Produto</h2>
       <form onSubmit={handleSubmit}>
         <InputField
