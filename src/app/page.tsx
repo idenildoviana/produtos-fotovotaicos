@@ -12,7 +12,6 @@ export default function Home() {
   const [products, setProducts] = useLocalStorage<Product[]>('photovoltaic_products', []);
 
   const handleAddProduct = (newProduct: Omit<Product, 'id'>) => {
-    // Adiciona um ID único para o produto (ex: usando timestamp ou UUID)
     const productWithId: Product = { ...newProduct, id: Date.now().toString() };
     setProducts((prevProducts) => [...prevProducts, productWithId]);
   };
