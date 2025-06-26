@@ -3,14 +3,11 @@
 import useLocalStorage from '@/hooks/useLocalStorage';
 import { PRODUCT_CATEGORIES } from '@/utils/constants';
 import { Product } from '@/types/product';
-import FormProduto from '@/components/FormProduto'
-import ListaProdutos from '@/components/ListaProdutos'
+
 import Header from '@/components/Header';
+import FormProduto from '@/components/FormProduto';
+import ListaProdutos from '@/components/ListaProdutos';
 import Footer from '@/components/Footer';
-
-
-
-
 
 export default function Home() {
   const [products, setProducts] = useLocalStorage<Product[]>('photovoltaic_products', []);
@@ -27,20 +24,25 @@ export default function Home() {
   };
 
   return (
-    <div> 
-      <div>
-      <Header/>
-        </div>
+    <div className="">
+      <Header />
 
-      <div className='container mx-auto md:flex justify-center  p-8 md:p-10'  >
-      <FormProduto onAddProduct={handleAddProduct} categories={PRODUCT_CATEGORIES} />       
+
+      <div className="grid container mx-auto p-4 max-w-5xl mt-10 grid-cols-1 md:grid-cols-2 gap-8">
+        <FormProduto
+          onProductAdded={handleAddProduct}
+          categories={PRODUCT_CATEGORIES}
+        />
+
         <ListaProdutos
-        products={products}
-        onRemoveProduct={handleRemoveProduct}
-        categories={PRODUCT_CATEGORIES}
-      />
+          products={products}
+          onRemoveProduct={handleRemoveProduct}
+          categories={PRODUCT_CATEGORIES}
+        />
       </div>
-      <Footer/>
+
+  
+  <Footer/>
     </div>
   );
 }

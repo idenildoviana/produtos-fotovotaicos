@@ -8,6 +8,7 @@ interface FormCadastroAsCardProps {
 }
 
 export default function FormCadastro({ product, onRemoveProduct }: FormCadastroAsCardProps) {
+  
   const shouldHidePowerCapacity = product.category === 'Material Elétrico' || product.category === 'Estrutura';
 
   return (

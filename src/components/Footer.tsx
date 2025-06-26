@@ -12,7 +12,7 @@ export default function Footer(){
       <footer className="bg-[#0E5087] items-center justify-center text-white text-center p-4 mt-8">
         <div>
           <p>Conheça nossas redes Sociais</p>
-        <div className='flex p-4 gap-4 justify-center  text-white'>
+        <div className='flex p-4 gap-4 justify-center text-white'>
           
           <Link href={'https://www.instagram.com/solarappoficial?utm_source=ig_web_button_share_sheet&igsh=MXFnZXNtYWxvMjQzag=='}>
           
@@ -39,9 +39,11 @@ export default function Footer(){
         height={30}/>
         </Link>
         </div>
-    
-        </div>
+        
 
+        </div>
+        <p className="text-sm mt-2">Conheça nosso CRM 100% Gratuito: <Link href="solarapp.com.br" className="underline">SolarApp.com</Link></p>
+          
         <p>&copy; 2025 SolarApp. Todos os direitos reservados.</p>
         </footer>
         </div>

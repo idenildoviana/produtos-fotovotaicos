@@ -42,7 +42,7 @@ export default function ListaProdutos({ products, onRemoveProduct, categories }:
             <p className=" text-center text-gray-500 mt-8">Nenhum produto encontrado nesta categoria.</p>
             </div>
           ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-4">
               {filteredProducts.map((product) => (
                 <ProductCard
                   key={product.id}
