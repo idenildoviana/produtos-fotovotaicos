@@ -32,7 +32,7 @@ export default function FormCadastro({ product, onRemoveProduct }: FormCadastroA
           
         <button
           onClick={() => onRemoveProduct(product.id)}
-          className="bg-red-500 hover:bg-red-700 text-white  font-bold mt-4 ml-4 -mr-2 py-1 px-3 rounded text-sm transition-colors duration-200"
+          className="bg-red-500 hover:bg-red-700 text-white ml-0 font-bold mt-4 sm:ml-4 -mr-2 py-1 px-3 rounded text-sm transition-colors duration-200"
         >
           Remover
         </button>
