@@ -4,11 +4,10 @@ import useLocalStorage from '@/hooks/useLocalStorage';
 import { PRODUCT_CATEGORIES } from '@/utils/constants';
 import { Product } from '@/types/product';
 // Esses três estão em common
-import Footer from '@/components/Footer'
 import FormProduto from '@/components/FormProduto'
 import ListaProdutos from '@/components/ListaProdutos'
-
-import Header from '@/components/Header'
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
 
 
 
