@@ -84,7 +84,7 @@ export default function FormProduto({ onProductAdded, categories }: FormProdutoP
         <div className="flex-grow flex justify-center items-center"> 
           <button
             onClick={() => setIsFormContentVisible(true)}
-            className="bg-[#106CB8] hover:bg-blue-900 text-white font-bold py-2 px-4 roundedmd focus:outline-none focus:shadow-outline"
+            className="bg-[#106CB8] hover:bg-blue-900 text-white font-bold py-2 px-4 rounded-md focus:outline-none focus:shadow-outline"
           >
             Novo Produto
           </button>
