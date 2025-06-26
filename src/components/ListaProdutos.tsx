@@ -34,7 +34,9 @@ export default function ListaProdutos({ products, onRemoveProduct, categories }:
           />
 
           {filteredProducts.length === 0 ? (
+            <div>
             <p className="text-center ml-10 text-gray-500 mt-8">Nenhum produto encontrado nesta categoria.</p>
+            </div>
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
               {filteredProducts.map((product) => (
