@@ -5,8 +5,9 @@ import { PRODUCT_CATEGORIES } from '@/utils/constants';
 import { Product } from '@/types/product';
 import FormProduto from '@/components/FormProduto';
 import ListaProdutos from '@/components/ListaProdutos';
-import Footer from '@/components/footer';
+
 import Header from '../components/Header'
+import Footer from '@/components/Footer';
 
 
 export default function Home() {
