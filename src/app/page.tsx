@@ -3,10 +3,10 @@
 import useLocalStorage from '@/hooks/useLocalStorage';
 import { PRODUCT_CATEGORIES } from '@/utils/constants';
 import { Product } from '@/types/product';
-import Header from '@/components/Header'; 
 import FormProduto from '@/components/FormProduto';
 import ListaProdutos from '@/components/ListaProdutos';
 import Footer from '@/components/footer';
+import Header from '@/components/Header';
 
 export default function Home() {
   const [products, setProducts] = useLocalStorage<Product[]>('photovoltaic_products', []);
