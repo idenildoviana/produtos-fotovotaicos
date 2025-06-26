@@ -9,7 +9,7 @@ export default function Footer(){
     return(
         <div>
                   
-      <footer className="bg-blue-900 items-center justify-center text-white text-center p-4 mt-8">
+      <footer className="bg-[#0E5087] items-center justify-center text-white text-center p-4 mt-8">
         <div>
           <p>Conheça nossas redes Sociais</p>
         <div className='flex p-4 gap-4 justify-center  text-white'>
