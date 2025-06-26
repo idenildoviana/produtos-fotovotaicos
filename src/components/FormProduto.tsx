@@ -1,8 +1,10 @@
 "use client";
 
 import { useState } from 'react';
+
+
 import InputField from '@/components/common/InputField';
-import SelectField from './common/SelectField';
+import SelectField from '@/components/common/SelectField'; 
 
 interface FormErrors {
   productName?: string;
@@ -28,12 +30,17 @@ export default function FormProduto({ onAddProduct, categories }: FormProdutoPro
   const [powerCapacity, setPowerCapacity] = useState('');
   const [errors, setErrors] = useState<FormErrors>({});
 
+  const shouldHidePowerCapacity = category === 'Material Elétrico' || category === 'Estrutura';
+
   const validateForm = () => {
     const newErrors: FormErrors = {};
     if (!productName.trim()) newErrors.productName = 'Nome do produto é obrigatório.';
     if (!category.trim()) newErrors.category = 'Categoria é obrigatória.';
     if (!manufacturer.trim()) newErrors.manufacturer = 'Fabricante é obrigatório.';
-    if (!powerCapacity.trim()) newErrors.powerCapacity = 'Potência/Capacidade é obrigatória.';
+
+    if (!shouldHidePowerCapacity && !powerCapacity.trim()) {
+      newErrors.powerCapacity = 'Potência/Capacidade é obrigatória.';
+    }
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
@@ -46,14 +53,14 @@ export default function FormProduto({ onAddProduct, categories }: FormProdutoPro
         name: productName,
         category,
         manufacturer,
-        powerCapacity,
+        powerCapacity: shouldHidePowerCapacity ? '' : powerCapacity,
       };
       onAddProduct(newProduct);
 
       setProductName('');
       setCategory(categories[0] || '');
       setManufacturer('');
-      setPowerCapacity('');
+      setPowerCapacity(''); 
       setErrors({});
     }
   };
@@ -75,33 +82,44 @@ export default function FormProduto({ onAddProduct, categories }: FormProdutoPro
           label="Categoria"
           id="category"
           value={category}
-          onChange={(e: React.ChangeEvent<HTMLSelectElement>) => setCategory(e.target.value)}
+          onChange={(e: React.ChangeEvent<HTMLSelectElement>) => {
+            setCategory(e.target.value);
+            if (errors.powerCapacity && (e.target.value === 'Material Elétrico' || e.target.value === 'Estrutura')) {
+              setErrors(prevErrors => {
+                const newErrors = { ...prevErrors };
+                delete newErrors.powerCapacity; 
+                return newErrors;
+              });
+            }
+          }}
           options={categories}
           error={errors.category}
         />
 
         <InputField
-          label="Distribuidor"
+          label="Fabricante"
           id="manufacturer"
           value={manufacturer}
           onChange={(e: React.ChangeEvent<HTMLInputElement>) => setManufacturer(e.target.value)}
-          placeholder="Ex: JNG/ADIAS"
+          placeholder="Ex: Canadian Solar" 
           error={errors.manufacturer}
         />
 
-        <InputField
-          label="Potência/Capacidade"
-          id="powerCapacity"
-          value={powerCapacity}
-          onChange={(e: React.ChangeEvent<HTMLInputElement>) => setPowerCapacity(e.target.value)}
-          placeholder="Ex: 550W, 5KWp"
-          error={errors.powerCapacity}
-        />
+        {!shouldHidePowerCapacity && (
+          <InputField
+            label="Potência/Capacidade"
+            id="powerCapacity"
+            value={powerCapacity}
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) => setPowerCapacity(e.target.value)}
+            placeholder="Ex: 550W, 5kW" 
+            error={errors.powerCapacity}
+          />
+        )}
 
-        <div className=" items-center justify-center text-center mt-6"> 
+        <div className="flex items-center justify-between mt-6">
           <button
             type="submit"
-            className="  bg-blue-500 cursor-pointer hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+            className="bg-blue-500 cursor-pointer hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
           >
             Cadastrar Produto
           </button>
