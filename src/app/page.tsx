@@ -6,7 +6,7 @@ import { Product } from '@/types/product';
 import FormProduto from '@/components/FormProduto';
 import ListaProdutos from '@/components/ListaProdutos';
 import Footer from '@/components/footer';
-import Header from '@/components/Header';
+import Header from '../components/Header'
 
 
 export default function Home() {
