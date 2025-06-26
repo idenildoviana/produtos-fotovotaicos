@@ -11,7 +11,7 @@ interface FormCadastroProps {
 export default function FormCadastro({ product, onRemoveProduct }: FormCadastroProps) {
   return (
     <div className="bg-gray-50 p-4 rounded-lg shadow-sm mb-2 border border-blue-300">
-      <div className="flex justify-between p-4 items-center">
+      <div className="sm:flex justify-between p-4 items-center">
         <div>
           <h3 className="text-lg font-semibold text-gray-800">{product.name}</h3>
           <p className="text-sm text-gray-600">
@@ -26,7 +26,7 @@ export default function FormCadastro({ product, onRemoveProduct }: FormCadastroP
         </div>
         <button
           onClick={() => onRemoveProduct(product.id)}
-          className="bg-red-500 ml-5 -mr-4 hover:bg-red-700 text-white font-bold py-1 px-2 rounded text-sm transition-colors duration-200 " 
+          className="bg-red-500 mt-4 sm:mt-0 sm:ml-5 sm:-mr-4 hover:bg-red-700 text-white font-bold py-1 px-2 rounded text-sm transition-colors duration-200 " 
         >
           Remover
         </button>
