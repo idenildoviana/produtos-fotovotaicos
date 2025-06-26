@@ -11,7 +11,7 @@ export default function FormCadastro({ product, onRemoveProduct }: FormCadastroA
   const shouldHidePowerCapacity = product.category === 'Material Elétrico' || product.category === 'Estrutura';
 
   return (
-    <div className="bg-gray-50 p-4 rounded-lg shadow-sm mb-2 border border-blue-300">
+    <div className="bg-gray-50 p-4 rounded-lg shadow-sm mb-2 border border-blue-300 transition-all duration-500 ease-in-out transform hover:scale-103 hover:shadow-lg">
       <div className="sm:flex justify-between p-4 items-center">
         <div>
           <h3 className="text-lg font-semibold text-gray-800">{product.name}</h3>
