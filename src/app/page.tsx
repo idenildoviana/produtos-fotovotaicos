@@ -8,6 +8,7 @@ import ListaProdutos from '@/components/ListaProdutos';
 import Footer from '@/components/footer';
 import Header from '@/components/Header';
 
+
 export default function Home() {
   const [products, setProducts] = useLocalStorage<Product[]>('photovoltaic_products', []);
 
